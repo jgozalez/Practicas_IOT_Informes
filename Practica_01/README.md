@@ -39,3 +39,40 @@ Ahora utilizando los comandos ss, netstat y lsof para mirar que puertos y servic
 Rcu_gp: Son bits dentro del Kernel de Linux.
 - Netns: gestión del espacio de nombres de la red de procesos.
 - Kworker: es un proceso de marcador de posición para los subprocesos de trabajo del kernel, que realizan la mayor parte del procesamiento real para el kernel, especialmente en los casos en que hay interrupciones, temporizadores, E/S, etc. Por lo general, corresponden a la gran mayoría de cualquier asignación  "tiempo del sistema" para ejecutar procesos.
+
+## 5. Evaluar scripts en Python: Al estudiante se le entregarán scripts en Python para desplegar un ejemplo de cliente servidor con protocolos TCP y UDP, el estudiante evaluará el rendimiento de los dos servicios y debe descubrir la ocupación de los puertos por medio de las herramientas previamente estudiadas.
+
+### TCP 
+Servidor
+
+![lsof](Imagenes_1/11.png)
+
+Cliente 
+
+![lsof](Imagenes_1/12.png)
+
+Se corre el servidor y luego el cliente 
+![lsof](Imagenes_1/13.png)
+
+
+Con el comando lsof -i -P -n  se puede ver los puertos ocupados por el protocolo TCP, por ejemplo, python3 está corriendo por el puerto 10000 con un servicio que esta a la escucha con el protocolo TCP ipv4, el cual está abierto para que se pueda acceder desde cualquier instancia 
+![lsof](Imagenes_1/14.png)
+
+### UDP
+Servidor
+
+![lsof](Imagenes_1/15.png)
+
+Cliente 
+
+![lsof](Imagenes_1/16.png)
+
+Se corre el servidor y luego el cliente 
+
+![lsof](Imagenes_1/17.png)
+
+Con el comando lsof -i -P -n  se puede ver los puertos ocupados por el protocolo UDP, por ejemplo, python3 está corriendo por el puerto 10000 con un servicio que esta a la escucha con el protocolo UDP ipv4, el cual está abierto para que se pueda acceder desde cualquier instancia. 
+
+![lsof](Imagenes_1/18.png)
+
+Se puede decir que el protocolo UDP al prescindir de un sistema de verificación de ida y vuelta entre el dispositivo emisor y el dispositivo receptor, el protocolo UDP permite una velocidad de transferencia superior a la del protocolo TCP.
