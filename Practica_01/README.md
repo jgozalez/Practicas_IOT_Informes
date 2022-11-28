@@ -30,9 +30,9 @@ Ahora utilizando los comandos ss, netstat y lsof para mirar que puertos y servic
 ![comandos](Imagenes_1/9.png)
 
 ## 4. Identificar servicios desplegados: El estudiante deberá identificar 5 servicios diferentes listados por las herramientas de red y determinar a qué aplicaciones posiblemente están relacionados.
- con el comando lsof | lees se se puede visualizar los servicios
+ Con el comando lsof | lees se se puede visualizar los servicios
 
-![lsof](Imagenes_1/10.png)
+![comandos](Imagenes_1/19.png)
 
 - Systemd: el objetivo de encargarse de arrancar todo lo que está por debajo del Kernel, permitiendo ejecutar varios procesos de manera simultánea.
 - Mm_percpu : asignador de memoria percpu
