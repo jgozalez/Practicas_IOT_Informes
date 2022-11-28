@@ -28,3 +28,14 @@ Aqui nos muestra  varias interfaces que ha creado el sistemas con sus respetivas
 
 Ahora utilizando los comandos ss, netstat y lsof para mirar que puertos y servicios está utilizando el sistema. 
 ![comandos](Imagenes_1/9.png)
+
+## 4. Identificar servicios desplegados: El estudiante deberá identificar 5 servicios diferentes listados por las herramientas de red y determinar a qué aplicaciones posiblemente están relacionados.
+ con el comando lsof | lees se se puede visualizar los servicios
+
+![lsof](Imagenes_1/10.png)
+
+- Systemd: el objetivo de encargarse de arrancar todo lo que está por debajo del Kernel, permitiendo ejecutar varios procesos de manera simultánea.
+- Mm_percpu : asignador de memoria percpu
+Rcu_gp: Son bits dentro del Kernel de Linux.
+- Netns: gestión del espacio de nombres de la red de procesos.
+- Kworker: es un proceso de marcador de posición para los subprocesos de trabajo del kernel, que realizan la mayor parte del procesamiento real para el kernel, especialmente en los casos en que hay interrupciones, temporizadores, E/S, etc. Por lo general, corresponden a la gran mayoría de cualquier asignación  "tiempo del sistema" para ejecutar procesos.
