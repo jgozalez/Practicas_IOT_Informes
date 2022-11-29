@@ -11,7 +11,7 @@ export declare class AppController {
     getHello(): Producto[];
     crear(datos: Producto): Producto;
     modificar(datos: Producto, id: number): Producto | string;
-    eliminar(id: number): boolean;
-    cambiarEdad(id: number, precio: number): Producto | string;
+    eliminar(id: number): string | boolean;
+    cambiarPrecio(id: number, precio: number): Producto | string;
 }
 export {};

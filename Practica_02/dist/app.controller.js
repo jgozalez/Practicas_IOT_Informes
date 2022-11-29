@@ -41,15 +41,17 @@ let AppController = class AppController {
         }
     }
     eliminar(id) {
-        try {
-            this.productos = this.productos.filter((val, index) => index != id);
-            return true;
-        }
-        catch (_a) {
-            return false;
-        }
+        if (this.productos = this.productos.filter((val, index) => index != id))
+            try {
+                return true;
+            }
+            catch (_a) {
+                return false;
+            }
+        else
+            return `No fue posible modificar el producto en la posición ${id}`;
     }
-    cambiarEdad(id, precio) {
+    cambiarPrecio(id, precio) {
         try {
             this.productos[id].precio = precio;
             return this.productos[id];
@@ -88,13 +90,13 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], AppController.prototype, "eliminar", null);
 __decorate([
-    (0, common_1.Patch)(":id/edad/:edad"),
+    (0, common_1.Patch)(":id/precio/:precio"),
     __param(0, (0, common_1.Param)('id')),
-    __param(1, (0, common_1.Param)('edad')),
+    __param(1, (0, common_1.Param)('precio')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number, Number]),
     __metadata("design:returntype", Object)
-], AppController.prototype, "cambiarEdad", null);
+], AppController.prototype, "cambiarPrecio", null);
 AppController = __decorate([
     (0, common_1.Controller)(),
     __metadata("design:paramtypes", [app_service_1.AppService])

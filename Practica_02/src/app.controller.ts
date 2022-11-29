@@ -41,17 +41,20 @@ export class AppController {
 
   @Delete(":id")
   eliminar(@Param('id') id: number){
-    try{
-      this.productos = this.productos.filter((val, index) => index != id);
-      return true;
-    }
-    catch{
-      return false;
-    }
+    if (this.productos = this.productos.filter((val, index) => index != id))
+      try{
+        return true; 
+        }
+      catch{
+        return false;
+        }
+    else
+      return `No fue posible modificar el producto en la posición ${id}`
+
   }
 
-  @Patch(":id/edad/:edad")
-  cambiarEdad(@Param('id') id: number, @Param('edad') precio: number): Producto | string{
+  @Patch(":id/precio/:precio")
+  cambiarPrecio(@Param('id') id: number, @Param('precio') precio: number): Producto | string{
     try{
       this.productos[id].precio = precio;
       return this.productos[id];
