@@ -3,16 +3,18 @@
 
 **Nombre de la asignatura: Electiva IOT**
 
-**Fecha de realización 29/11/2022**
+**Fecha de realización 28/11/2022**
 
 ## 1. Instalar servidor NodeJS y NestJS.
 Instalamos nodo NodeJs
 ![NodeJS](Imagenes_2/1.png)
 
 Validamos las versión
+
 ![NodeJS](Imagenes_2/2.png)
 
 Ahora instalamos NestJS.
+
 ![NestJS](Imagenes_2/3.png)
 
 
@@ -23,6 +25,7 @@ Luego creamos un proyecto NestJS ejecutando el comando nest new
 ![proyecto](Imagenes_2/4.png)
 
 identificamos la dirección IP de la máquina
+
 ![proyecto](Imagenes_2/5.png)
 
 Se verifica los scripts disponibles
@@ -45,40 +48,52 @@ Ahora nos conectamos  la servidor y nos muestra "Hello World!"
 
 En el archivo app.controller.ts
 creamos una interfaz de Producto
+
 ![proyecto](Imagenes_2/11.png)
 
-Luego creamos la clase Producto y  creamos un producto.
+Luego creamos la clase Producto y  creamos un producto con su nombre, descripción y precio.
+
 ![proyecto](Imagenes_2/12.png)
 
-Luego creamos una metodo GET  para solicitar una representación de productos
+Luego GET  para solicitar una representación de productos
+
 ![proyecto](Imagenes_2/13.png)
 
-Creamos una metodo POST para crear un producto. 
+Creamos POST para crear un producto. 
+
 ![proyecto](Imagenes_2/14.png)
 
-Creamos una metodo PUT para Actualizar un producto. 
+Creamos PUT para Actualizar un producto. 
+
 ![proyecto](Imagenes_2/22.png)
 
-Creamos una metodo DELETE para eliminar un producto. 
+Creamos DELETE para eliminar un producto. 
+
 ![proyecto](Imagenes_2/15.png)
 
-Creamos una metodo PATCH para actualizar un producto parcialmente. 
+Creamos  PATCH para actualizar un producto parcialmente. 
+
 ![proyecto](Imagenes_2/16.png)
 
 ## Evaluación del funcionamiento de los verbos.
 En este caso se utilizo la herramienta Postman para evaluar los verbos.
 
 GET 
+
 ![GET](Imagenes_2/17.png)
 
 POST
+
 ![POST](Imagenes_2/18.png)
 
 PUT
+
 ![PUT](Imagenes_2/19.png)
 
 DELETE
+
 ![DELETE](Imagenes_2/20.png)
 
 PATCH
+
 ![DELETE](Imagenes_2/21.png)
