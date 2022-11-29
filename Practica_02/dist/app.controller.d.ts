@@ -1,8 +1,17 @@
 import { AppService } from './app.service';
+interface Producto {
+    nombre: string;
+    descripcion: string;
+    precio: number;
+}
 export declare class AppController {
     private readonly appService;
     constructor(appService: AppService);
-    private persona;
-    getHello(): string;
-    modificar(nombre: string): string;
+    private productos;
+    getHello(): Producto[];
+    crear(datos: Producto): Producto;
+    modificar(datos: Producto, id: number): Producto | string;
+    eliminar(id: number): boolean;
+    cambiarEdad(id: number, precio: number): Producto | string;
 }
+export {};

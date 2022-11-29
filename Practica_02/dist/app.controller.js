@@ -18,29 +18,83 @@ const app_service_1 = require("./app.service");
 let AppController = class AppController {
     constructor(appService) {
         this.appService = appService;
-        this.persona = "Mundo";
+        this.productos = [{
+                nombre: "Licuadora",
+                descripcion: "Doble revolucion",
+                precio: 80
+            }];
     }
     getHello() {
-        return `Hola: ${this.persona}`;
+        return this.productos;
     }
-    modificar(nombre) {
-        this.persona = nombre;
-        return `Mensaje modificado: ${this.persona}`;
+    crear(datos) {
+        this.productos.push(datos);
+        return datos;
+    }
+    modificar(datos, id) {
+        try {
+            this.productos[id] = datos;
+            return this.productos[id];
+        }
+        catch (_a) {
+            return `No fue posible modificar el producto en la posición ${id}`;
+        }
+    }
+    eliminar(id) {
+        try {
+            this.productos = this.productos.filter((val, index) => index != id);
+            return true;
+        }
+        catch (_a) {
+            return false;
+        }
+    }
+    cambiarEdad(id, precio) {
+        try {
+            this.productos[id].precio = precio;
+            return this.productos[id];
+        }
+        catch (_a) {
+            return `No fue posible modificar el producto en la posición ${id}`;
+        }
     }
 };
 __decorate([
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
-    __metadata("design:returntype", String)
+    __metadata("design:returntype", Array)
 ], AppController.prototype, "getHello", null);
 __decorate([
-    (0, common_1.Post)(':nombre'),
-    __param(0, (0, common_1.Param)('nombre')),
+    (0, common_1.Post)(),
+    __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
-    __metadata("design:returntype", String)
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Object)
+], AppController.prototype, "crear", null);
+__decorate([
+    (0, common_1.Put)(":id"),
+    __param(0, (0, common_1.Body)()),
+    __param(1, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Number]),
+    __metadata("design:returntype", Object)
 ], AppController.prototype, "modificar", null);
+__decorate([
+    (0, common_1.Delete)(":id"),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+], AppController.prototype, "eliminar", null);
+__decorate([
+    (0, common_1.Patch)(":id/edad/:edad"),
+    __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Param)('edad')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, Number]),
+    __metadata("design:returntype", Object)
+], AppController.prototype, "cambiarEdad", null);
 AppController = __decorate([
     (0, common_1.Controller)(),
     __metadata("design:paramtypes", [app_service_1.AppService])
