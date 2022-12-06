@@ -1,5 +1,6 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, Put, UseGuards,Inject } from '@nestjs/common';
 import { LicuadoraService } from '../../domain/services/licuadora.service';
+import { AuthGuard } from '@nestjs/passport';
 
 import {Licuadora} from '../../domain/models/Licuadora.model';
 
@@ -13,6 +14,8 @@ const errReturn = (e: Error, message: string) => {
 @Controller()
 export class LicuadoraController {
 constructor(private readonly licService: LicuadoraService) { }
+
+   @UseGuards(AuthGuard('local')) // Se adiciona esta anotación
 
    @Get()
    getHello() {
