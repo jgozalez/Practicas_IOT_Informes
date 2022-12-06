@@ -1,7 +1,7 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, Put, UseGuards,Inject } from '@nestjs/common';
 import { LicuadoraService } from '../../domain/services/licuadora.service';
 import { AuthGuard } from '@nestjs/passport';
-
+import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 import {Licuadora} from '../../domain/models/Licuadora.model';
 
 const errReturn = (e: Error, message: string) => {
@@ -15,7 +15,7 @@ const errReturn = (e: Error, message: string) => {
 export class LicuadoraController {
 constructor(private readonly licService: LicuadoraService) { }
 
-   @UseGuards(AuthGuard('local')) // Se adiciona esta anotación
+   @UseGuards(JwtAuthGuard) // Se adiciona esta anotación
 
    @Get()
    getHello() {
