@@ -1,26 +1,26 @@
 import { LicuadoraService } from '../../domain/services/licuadora.service';
-import { Licuadora } from '../../domain/models/Licuadora.model';
+import { LicuadoraEntity } from '../../domain/entities/licuadora.entity';
 export declare class LicuadoraController {
     private readonly licService;
     constructor(licService: LicuadoraService);
-    getHello(): Licuadora[] | {
+    getHello(): Promise<LicuadoraEntity[]> | {
         message: string;
         error: Error;
     };
-    crear(datos: Licuadora): Licuadora | {
+    crear(datos: LicuadoraEntity): {
         message: string;
         error: Error;
-    };
-    modificar(datos: Licuadora, id: number): Licuadora | {
+    } | Promise<import("typeorm").InsertResult>;
+    modificar(datos: LicuadoraEntity, id: number): {
         message: string;
         error: Error;
-    };
-    eliminar(id: number): boolean | {
+    } | Promise<import("typeorm").UpdateResult>;
+    eliminar(id: number): {
         message: string;
         error: Error;
-    };
-    cambiarEdad(id: number, precio: number): Licuadora | {
+    } | Promise<boolean>;
+    cambiarEdad(id: number, precio: number): {
         message: string;
         error: Error;
-    };
+    } | Promise<import("typeorm").UpdateResult>;
 }

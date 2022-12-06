@@ -69,13 +69,13 @@ let LicuadoraController = class LicuadoraController {
     }
 };
 __decorate([
-    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], LicuadoraController.prototype, "getHello", null);
 __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
@@ -83,6 +83,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], LicuadoraController.prototype, "crear", null);
 __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     (0, common_1.Put)(":id"),
     __param(0, (0, common_1.Body)()),
     __param(1, (0, common_1.Param)('id')),
@@ -91,6 +92,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], LicuadoraController.prototype, "modificar", null);
 __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     (0, common_1.Delete)(":id"),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
@@ -98,6 +100,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], LicuadoraController.prototype, "eliminar", null);
 __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     (0, common_1.Patch)(":id/precio/:precio"),
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Param)('precio')),

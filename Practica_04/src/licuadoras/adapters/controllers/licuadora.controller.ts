@@ -2,6 +2,7 @@ import { Body, Controller, Delete, Get, Param, Patch, Post, Put, UseGuards,Injec
 import { LicuadoraService } from '../../domain/services/licuadora.service';
 import { AuthGuard } from '@nestjs/passport';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
+import { LicuadoraEntity } from '../../domain/entities/licuadora.entity';
 import {Licuadora} from '../../domain/models/Licuadora.model';
 
 const errReturn = (e: Error, message: string) => {
@@ -13,7 +14,7 @@ const errReturn = (e: Error, message: string) => {
 
 @Controller()
 export class LicuadoraController {
-constructor(private readonly licService: LicuadoraService) { }
+constructor(@Inject('LicuadoraService')private readonly licService: LicuadoraService) { }
 
    
 
@@ -29,7 +30,7 @@ constructor(private readonly licService: LicuadoraService) { }
 
    @UseGuards(JwtAuthGuard) // Se adiciona esta anotación
    @Post()
-   crear(@Body() datos: Licuadora) {
+   crear(@Body() datos: LicuadoraEntity) {
       try{
          return this.licService.crear(datos);
       }
@@ -40,7 +41,7 @@ constructor(private readonly licService: LicuadoraService) { }
 
    @UseGuards(JwtAuthGuard) // Se adiciona esta anotación
    @Put(":id")
-   modificar(@Body() datos: Licuadora, @Param('id') id: number) {
+   modificar(@Body() datos: LicuadoraEntity, @Param('id') id: number) {
       try{
          return this.licService.modificar(id, datos);
       }

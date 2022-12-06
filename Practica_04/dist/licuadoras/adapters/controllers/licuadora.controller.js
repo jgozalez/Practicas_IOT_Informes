@@ -16,7 +16,7 @@ exports.LicuadoraController = void 0;
 const common_1 = require("@nestjs/common");
 const licuadora_service_1 = require("../../domain/services/licuadora.service");
 const jwt_auth_guard_1 = require("../../../auth/jwt-auth.guard");
-const Licuadora_model_1 = require("../../domain/models/Licuadora.model");
+const licuadora_entity_1 = require("../../domain/entities/licuadora.entity");
 const errReturn = (e, message) => {
     return {
         message: message,
@@ -79,7 +79,7 @@ __decorate([
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Licuadora_model_1.Licuadora]),
+    __metadata("design:paramtypes", [licuadora_entity_1.LicuadoraEntity]),
     __metadata("design:returntype", void 0)
 ], LicuadoraController.prototype, "crear", null);
 __decorate([
@@ -88,7 +88,7 @@ __decorate([
     __param(0, (0, common_1.Body)()),
     __param(1, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Licuadora_model_1.Licuadora, Number]),
+    __metadata("design:paramtypes", [licuadora_entity_1.LicuadoraEntity, Number]),
     __metadata("design:returntype", void 0)
 ], LicuadoraController.prototype, "modificar", null);
 __decorate([
@@ -110,6 +110,7 @@ __decorate([
 ], LicuadoraController.prototype, "cambiarEdad", null);
 LicuadoraController = __decorate([
     (0, common_1.Controller)(),
+    __param(0, (0, common_1.Inject)('LicuadoraService')),
     __metadata("design:paramtypes", [licuadora_service_1.LicuadoraService])
 ], LicuadoraController);
 exports.LicuadoraController = LicuadoraController;

@@ -2,6 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { LicuadoraController } from './licuadora.controller';
 import { LicuadoraService } from '../../domain/services/licuadora.service';
 
+
 describe('AppController', () => {
   let appController: LicuadoraController;
 

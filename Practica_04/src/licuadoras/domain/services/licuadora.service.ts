@@ -1,39 +1,39 @@
 import { Injectable } from '@nestjs/common';
-// Importamos el modelo de jugador
 import { Licuadora } from '../models/Licuadora.model';
+import { LicuadoraEntity } from '../entities/licuadora.entity';
+import { InjectRepository } from '@nestjs/typeorm';
+import { InsertResult, MongoRepository, UpdateResult } from 'typeorm';
 
 @Injectable()
 export class LicuadoraService {
 
-   // Como no hay base de datos aun empleamos una variable en memoria:
-   private licuadora: Licuadora[] = [{
-      marca:'oster',
-      descripcion:'Doble revolucion',
-      precio: 80,
-      capacidad: '5 litros'
-   }]
+   constructor(
+      @InjectRepository(LicuadoraEntity)
+      private repository: MongoRepository<LicuadoraEntity>,
+   ) {}
+
 
     /**
     * Método para obtener todos los jugadores
     */
-     public listar() : Licuadora[] {
-      return this.licuadora
+     public async listar() : Promise<LicuadoraEntity[]> {
+      return await this.repository.find();
    }
 
    /**
     * Método para crear un jugador
     */
-   public crear(lic: Licuadora): Licuadora {
-      this.licuadora.push(lic);
-      return lic;
+   public async crear(lic: LicuadoraEntity): Promise<InsertResult> {
+      const newLicuadora = await this.repository.insert(lic);
+      return newLicuadora;
    }
 
    /**
     * Método para modificar un jugador
     */
-   public modificar(id: number, lic: Licuadora): Licuadora {
-         this.licuadora[id] = lic
-         return this.licuadora[id];
+   public async modificar(id: number, lic: LicuadoraEntity): Promise<UpdateResult>  {
+      const updatedLicuadora = await this.repository.update(id, lic);
+         return updatedLicuadora;
    }
 
    /**
@@ -41,23 +41,17 @@ export class LicuadoraService {
     * Debido a que usamos un filtro, para validar si se elimina el jugador, 
     * primero se determina cuantos elementos hay en el arreglo y luego se hace una comparación.
     */
-   public eliminar(id: number): boolean {
-      const totalLicuadorasAntes = this.licuadora.length;
-      this.licuadora = this.licuadora.filter((val, index) => index != id);
-      if(totalLicuadorasAntes == this.licuadora.length){
-         return false;
-      }
-      else{
-         return true;
-      }
+   public async eliminar(id: number): Promise<boolean> {
+      const deleteResult = await this.repository.delete(id)
+      return deleteResult.affected > 0;
    }
 
    /**
     * Método para modificar la edad de un jugador
     */
-   public cambiarPrecio(id: number, pre: number): Licuadora {
-      this.licuadora[id].precio = pre;
-      return this.licuadora[id];
+   public async cambiarPrecio(id: number, pre: number): Promise<UpdateResult> {
+      const updatedLicuadora= await this.repository.update(id, { precio: pre });
+      return updatedLicuadora;
    }
 
 }

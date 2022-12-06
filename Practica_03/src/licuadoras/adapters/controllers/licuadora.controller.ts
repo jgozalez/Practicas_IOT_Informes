@@ -15,7 +15,7 @@ const errReturn = (e: Error, message: string) => {
 export class LicuadoraController {
 constructor(private readonly licService: LicuadoraService) { }
 
-   @UseGuards(JwtAuthGuard) // Se adiciona esta anotación
+   
 
    @Get()
    getHello() {
@@ -27,6 +27,7 @@ constructor(private readonly licService: LicuadoraService) { }
       }
    }
 
+   @UseGuards(JwtAuthGuard) // Se adiciona esta anotación
    @Post()
    crear(@Body() datos: Licuadora) {
       try{
@@ -37,6 +38,7 @@ constructor(private readonly licService: LicuadoraService) { }
       }
    }
 
+   @UseGuards(JwtAuthGuard) // Se adiciona esta anotación
    @Put(":id")
    modificar(@Body() datos: Licuadora, @Param('id') id: number) {
       try{
@@ -47,6 +49,7 @@ constructor(private readonly licService: LicuadoraService) { }
       }
    }
 
+   @UseGuards(JwtAuthGuard) // Se adiciona esta anotación
    @Delete(":id")
    eliminar(@Param('id') id: number) {
       try{
@@ -57,6 +60,7 @@ constructor(private readonly licService: LicuadoraService) { }
       }
    }
 
+   @UseGuards(JwtAuthGuard) // Se adiciona esta anotación
    @Patch(":id/precio/:precio")
    cambiarEdad(@Param('id') id: number, @Param('precio') precio: number) {
       try{
