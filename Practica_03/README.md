@@ -61,6 +61,7 @@ Se modifica el precio del producto con PATCH
 ![inst](imagenes_3/38.png)
 
 Se lista el productpo con GET
+
 ![inst](imagenes_3/39.png)
 
 Por ultimo se elimina el producto con DELETE
