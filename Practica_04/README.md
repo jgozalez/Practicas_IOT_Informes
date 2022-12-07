@@ -1,73 +1,55 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Práctica 4: Desplegando en la nube
+**Por** *Juan Camilo Gonzalez Mulato*
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Objetivos
+1. Desplegar una aplicación en la nube.
+2. Agregar una base de datos a la aplicación.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## 1. Desplegar una aplicación en la nube
+Se descargar deta ejecutando el siguiente comando.
 
-## Description
+![inst](imagenes_4/43.png)
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+luego se hace la las implementaciones y modificaciones necesarias para el despliegue 
 
-## Installation
+Para poublicar la aplicación ejecutando en la terminal el comando:
 
-```bash
-$ npm install
-```
+![inst](imagenes_4/44.png)
+![inst](imagenes_4/45.png)
 
-## Running the app
+Después se despliega la aplicación y posterior se activan los logs ejecutando en la en la terminal:
 
-```bash
-# development
-$ npm run start
+![inst](imagenes_4/46.png)
 
-# watch mode
-$ npm run start:dev
+Prueba de la aplicacion desplega en la nube en DETA
 
-# production mode
-$ npm run start:prod
-```
+![inst](imagenes_4/50.png)
 
-## Test
+![inst](imagenes_4/60.png)
 
-```bash
-# unit tests
-$ npm run test
+ Ingresando al link obtenido https://vqz9v3.deta.dev Se obtiene la respuesta implementada en el método get del servicio:
 
-# e2e tests
-$ npm run test:e2e
+![inst](imagenes_4/47.png)
 
-# test coverage
-$ npm run test:cov
-```
+## 2. Conectado a una base de datos
+Se realizó el registro y la respectiva configuración de la base de datos en MongoDB.
 
-## Support
+![inst](imagenes_4/49.png)
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+luego se hizo las respectivas implementación y modificaciones a los archivos.
 
-## Stay in touch
+Por último, se hizo la validación de la conexión con la base de datos en Postman.
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Primero se hace un GET para verificar que la base de datos este vacía
 
-## License
+![inst](imagenes_4/64.png)
 
-Nest is [MIT licensed](LICENSE).
+Luego se inserta un producto con POST
+
+![inst](imagenes_4/61.png)
+
+Por ultimo se hace un GET para listar el elemento
+
+![inst](imagenes_4/63.png)
+
+ Esto quiere decir que la conexión con la base de datos fue exitosa.
