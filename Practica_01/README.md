@@ -1,5 +1,13 @@
-# Practica 1
+# Práctica 1: Configuración de entorno y red
 **Por** *Juan Camilo Gonzalez Mulato*
+
+## Objetivos de la práctica
+Con el desarrollo de la práctica se espera que el estudiante aprenda como:
+
+1. Crear un entorno Linux virtual para evaluar servicios empleando herramientas como VirtualBox, Github y Docker.
+2. Identificar en Linux mecanismos para la identificación de ocupación de puertos y a qué servicio está relacionado
+3. Implementar un pequeño servicio cliente/servidor en Python empleando TCP y UDP, a partir de ello establezca cual es más adecuado para algunos contextos que le serán planteados.
+
 ## 1. Configuración del entorno: El estudiante deberá configurar su dispositivo de elección para ejecutar una imagen virtualizada de Linux, este será un suministro importante para el resto de prácticas.
 ### Se instaló la imagen de Linux Ubuntu y posteriormente se realizo las diferentes configuraciones del entorno.
 ![Ubuntu](Imagenes_1/0.png)
