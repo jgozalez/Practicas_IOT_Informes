@@ -1,3 +1,3 @@
 # PRÁCTICAS ELECTIVA IOT
-## Universidad del Cuaca
+## Universidad del Cauca
 **Por** *Juan Camilo Gonzalez Mulato*
