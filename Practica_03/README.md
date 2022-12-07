@@ -58,7 +58,7 @@ Se modifica el producto con PUT
 
 Se modifica el precio del producto con PATCH
 
-![inst](imagenes_3/38.png)
+![inst](imagenes_3/42.png)
 
 Se lista el productpo con GET
 
@@ -66,7 +66,7 @@ Se lista el productpo con GET
 
 Por ultimo se elimina el producto con DELETE
 
-![inst](imagenes_3/36.png)
+![inst](imagenes_3/44.png)
 
 
 
