@@ -1,9 +1,16 @@
-# Practica 2
+# Práctica 2: Creando un servidor REST
 **Por** *Juan Camilo Gonzalez Mulato*
 
 **Nombre de la asignatura: Electiva IOT**
 
 **Fecha de realización 28/11/2022**
+
+## Objetivos
+1. Instalar servidor NodeJS y NestJS.
+2. Implementar un servidor web que exponga un recurso REST.
+3. Publicar en GitHub el código fuente del servidor.
+4. Identificar los verbos Http y su uso para un caso de ejemplo.
+
 
 ## 1. Instalar servidor NodeJS y NestJS.
 Instalamos nodo NodeJs
